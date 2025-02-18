@@ -44,7 +44,7 @@ def login():
             with sqlite3.connect(db_path) as conn:
                 conn.row_factory = sqlite3.Row
                 cur = conn.cursor()
-                cur.execute("SELECT * FROM users WHERE username = ? AND password = ?", (username, pa>
+                cur.execute("SELECT * FROM users WHERE username = ? AND password = ?", (username, password))
                 user = cur.fetchone()
 
                 if user:
